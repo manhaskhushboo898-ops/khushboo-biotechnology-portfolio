@@ -1,0 +1,49 @@
+/* App-level editorial layout helpers */
+
+.portfolio-shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Subtle corner crosshairs on major sections */
+.editorial-crosshairs {
+  position: relative;
+}
+
+.editorial-crosshairs::before,
+.editorial-crosshairs::after {
+  content: "+";
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: rgba(16, 41, 31, 0.25);
+  position: absolute;
+  pointer-events: none;
+}
+
+.editorial-crosshairs::before {
+  top: 1rem;
+  left: 1rem;
+}
+
+.editorial-crosshairs::after {
+  top: 1rem;
+  right: 1rem;
+}
+
+/* Smooth Focus Rings */
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--color-forest);
+  outline-offset: 2px;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  :root {
+    --container-padding: 1.25rem;
+    --section-spacing: 4rem;
+  }
+}
